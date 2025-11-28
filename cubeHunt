@@ -1,0 +1,95 @@
+# CubeHunt PRD (OneHack 2.0 GameFi Edition)
+
+**Version:** 1.0  
+**Date:** November 26, 2025  
+**Author:** Grok (xAI)  
+**Status:** Hackathon MVP Sprint  
+**Overview:** CubeHunt is a free-to-play, event-based NFT hunt game on OneChain L1 (Move blockchain). Players explore a massive procedural grid (10k+ cubes) to uncover hidden dynamic NFTs via on-chain reveals. zkLogin-style OneWallet onboarding, gasless tx, viral events. Targets Web2 gamers for GameFi onboarding. MVP: Login → Hunt → Mint/Trade NFT. Built for OneHack submission (Nov 28 deadline): 3-min demo proves working prototype + OneWallet integration.
+
+## 1. Problem & Opportunity
+- Web2 gamers skip Web3 games due to UX friction; GameFi needs simple, addictive hooks like Metacube's cube hunts.
+- OneHack GameFi: $12.5k prizes + grants for on-chain gaming prototypes on OneChain. Move L1 enables composable NFTs; OneWallet = seamless entry.
+- Market: 1B+ casual players; viral TikTok/Discord shares drive 100k+ hunts/event.
+
+## 2. Objectives & Success Metrics
+| Objective | KPI | Hackathon Target | Post-Hack (Y1) |
+|-----------|-----|-------------------|----------------|
+| MVP Submission | Criteria Met | 100% (Video/Repo/OneWallet) | N/A |
+| Judging Score | Prototype + Innovation | Top 3 ($3k Prize) | 100k DAU |
+| Engagement | Demo Plays | 1k+ Views | 20 min Sessions |
+| Economy | NFT Mints/Trades | 100 Testnet | 50k/Wk |
+
+**North Star:** Win via "Hunt → Mint Rare NFT in 30s" demo.
+
+## 3. Target Audience
+- **Primary:** Casual mobile gamers (18-35, non-crypto). Google/Apple via OneWallet.
+- **Personas:**
+  | Name | Behaviors | Pain Points |
+  |------|------------|-------------|
+  | Alex (Casual) | Quick hunts, shares rares | Wallets/gas |
+  | Jordan (Web3) | Trade composable NFTs | Boring flips |
+
+## 4. Key Features & User Stories (Hack MVP)
+**Core Loop:** OneWallet Login → Grid Hunt → Reveal Tx → Mint/Trade.
+
+| Feature | Description | Priority | User Stories | OneHack Tie-In |
+|---------|-------------|----------|--------------|---------------|
+| **OneWallet Onboarding** | zkLogin (Google/Apple), gasless sponsored tx. Starter cubes. | P0 | Login <5s, auto-join event. | Required basic integration. |
+| **Procedural Cube Grid** | 10k+ cubes (canvas UI), procedural gen (seeded RNG). | P0 | Scroll/click cubes to probe. | Game prototype core. |
+| **On-Chain Reveals/Mints** | Tx reveals hidden NFT traits; rare mints (1/1000). Dynamic fields mutate. | P0 | Click → Tx → "Rare Found!" NFT to wallet. | GameFi: Composable NFTs. |
+| **Basic Marketplace** | List/buy rares (2% fee). | P0 | Trade post-mint. | Economy demo. |
+| **Events/Leaderboard** | Timed hunts (e.g., "24h Top Finder"), ONE token rewards. | P1 | Top 10 claim extras. | Viral retention. |
+
+**MVP Scope:** 10k grid, 1 event type, basic trade. No PvP.
+
+## 5. User Flows (3-Min Demo Script)
+```
+1. Onboard: OneWallet → Grid loads (10k cubes).
+2. Hunt: Click 10 cubes → 1 rare reveal/mint (tx visible).
+3. Trade: List NFT → Buy sim.
+4. Event: Leaderboard update → Claim.
+Video: "Web2 login → On-chain hunt → Own/trade NFT."
+```
+
+## 6. Technical Requirements (2-Day Build)
+**Blockchain:** OneChain Testnet/Mainnet (Move L1).
+| Component | Tech | Rationale |
+|-----------|------|-----------|
+| **Smart Contracts** | Move Modules: CubeGen (structs/array), RevealMint (RNG), KioskMarket, Events. | Object-centric NFTs; parallel tx. Use OneChain stdlib. |
+| **Frontend** | React/Next + OneChain TS SDK. Canvas for grid (procedural render). | PWA mobile; quick UI. |
+| **Backend** | Minimal: Node indexer for LBs; off-chain gen seed. | 60fps hunts; on-chain assets. |
+| **Integrations** | OneWallet SDK (auth/tx), sponsored gas. | Judging must; zero-gas UX. |
+| **Security** | Move verifier; testnet sims. | No exploits in demo. |
+| **Infra** | OneChain RPCs; GitHub repo. | Deploy: Sui-like CLI. |
+
+**2-Day Sprint (Nov 26-28, 1-2 Devs):**
+1. **Day 1:** Move contracts (gen/reveal), OneWallet connect.
+2. **Day 2:** React grid/UI, marketplace, video/repo. Testnet deploy.
+
+**Resources:** TS SDK (doc-testnet.onelabs.cc), OneWallet docs.
+
+## 7. Monetization (Post-Hack)
+- 2% NFT trade fees.
+- Event entry (micro-ONE).
+- Projections: $100k Y1 at 1M hunts.
+
+## 8. Submission & GTM
+- **Submit By Nov 28:** Form (forms.gle/...), 3-min video (Loom: full flow), GitHub (contracts/frontend/README: setup/deploy).
+- **Pitch:** "GameFi NFT Hunt: 10k Cubes → On-Chain Rares on OneChain."
+- **Post-Win:** Mainnet events, Discord (5k), TikTok virals, OneChain grants.
+
+## 9. Roadmap
+| Milestone | Timeline | Deliverables |
+|-----------|----------|--------------|
+| Hack MVP | Nov 28 | Submit prototype. |
+| Mainnet V1 | Dec 2025 | 1M cubes, PvP hunts. |
+| V2 | Q1 2026 | Cross-game composables. |
+
+## 10. Risks & Mitigations
+| Risk | Mitigation |
+|------|-------------|
+| Deadline | Prioritize reveal loop; testnet only. |
+| OneWallet Bugs | Fallback email login; Discord support. |
+| Low Rares | Adjustable RNG seed. |
+
+**Next:** Code Move Reveal module → Deploy testnet → Record video. Win $3k+!
