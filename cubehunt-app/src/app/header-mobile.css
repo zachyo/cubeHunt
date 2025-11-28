@@ -1,0 +1,42 @@
+/* Responsive Header */
+@media (max-width: 768px) {
+  .header-nav {
+    display: none !important;
+  }
+
+  .header-content {
+    height: 60px !important;
+    padding: 0 16px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  header .container {
+    padding: 0 16px;
+  }
+
+  /* Make wallet info more compact on mobile */
+  .wallet-info {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+  }
+
+  .wallet-avatar {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    height: 56px !important;
+  }
+
+  /* Hide "Connected" text on very small screens */
+  .wallet-status {
+    display: none !important;
+  }
+}

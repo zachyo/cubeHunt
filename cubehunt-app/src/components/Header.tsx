@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useCurrentAccount, ConnectButton } from "@mysten/dapp-kit";
+import "../app/header-mobile.css";
 
 export default function Header() {
   const currentAccount = useCurrentAccount();
@@ -75,6 +76,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             {currentAccount ? (
               <div
+                className="wallet-info"
                 style={{
                   padding: "8px 16px",
                   display: "flex",
@@ -87,6 +89,7 @@ export default function Header() {
               >
                 <div className="flex flex-col items-end">
                   <span
+                    className="wallet-status"
                     style={{
                       fontSize: "0.75rem",
                       color: "var(--color-text-light)",
@@ -100,6 +103,7 @@ export default function Header() {
                   </span>
                 </div>
                 <div
+                  className="wallet-avatar"
                   style={{
                     width: "32px",
                     height: "32px",
