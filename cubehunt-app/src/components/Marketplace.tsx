@@ -74,6 +74,8 @@ export default function Marketplace() {
               <NFTCard
                 key={listing.nft.id}
                 nft={listing.nft}
+                price={listing.price}
+                seller={listing.seller}
                 onBuy={() => buyNFT(index)}
                 showActions={user !== null && listing.seller !== user.address}
               />
@@ -115,7 +117,7 @@ export default function Marketplace() {
               className="text-2xl font-bold"
               style={{ color: "var(--color-primary)" }}
             >
-              {marketplace.reduce((sum, l) => sum + l.price, 0).toFixed(2)} ONE
+              {marketplace.reduce((sum, l) => sum + l.price, 0).toFixed(2)} SUI
             </p>
           </div>
         </div>
