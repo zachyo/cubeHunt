@@ -7,11 +7,14 @@ import CubeGrid from "@/components/CubeGrid";
 import Marketplace from "@/components/Marketplace";
 import Leaderboard from "@/components/Leaderboard";
 import NFTCard from "@/components/NFTCard";
+import MyNFTs from "@/components/MyNFTs";
 
 function GameContent() {
   const { cubes, revealCube, isLoading, user, revealingCubeId, listNFT } =
     useGame();
-  const [activeTab, setActiveTab] = useState<"hunt" | "market">("hunt");
+  const [activeTab, setActiveTab] = useState<"hunt" | "market" | "mynfts">(
+    "hunt"
+  );
 
   const handleList = (nftId: string) => {
     const price = prompt("Enter price in SUI:");
@@ -106,7 +109,10 @@ function GameContent() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex justify-center gap-4">
+          <div
+            className="flex justify-center gap-4"
+            style={{ flexWrap: "wrap" }}
+          >
             <button
               onClick={() => setActiveTab("hunt")}
               className={`btn ${
@@ -114,6 +120,15 @@ function GameContent() {
               }`}
             >
               🎯 Start Hunting
+            </button>
+
+            <button
+              onClick={() => setActiveTab("mynfts")}
+              className={`btn ${
+                activeTab === "mynfts" ? "btn-primary" : "btn-secondary"
+              }`}
+            >
+              🎨 My NFTs
             </button>
 
             <button
@@ -268,6 +283,10 @@ function GameContent() {
                 </div>
               </div>
             </div>
+          </div>
+        ) : activeTab === "mynfts" ? (
+          <div className="card">
+            <MyNFTs />
           </div>
         ) : (
           <div className="card">
